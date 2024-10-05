@@ -19,6 +19,22 @@ Para ejecutar esta aplicación localmente, necesitas:
 - Librerías de Python:
   - Flask
   - Requests
+## **configuracion del proyecto**
+- **Clona el repositorio**
+- git clone https://github.com/tu-usuario/proyecto-consulta-clima.git
+- cd proyecto-consulta-clima
+- **instala dependencias**
+- pip install flask requests
+- **ejecuta dekl servidor flask**
+- python app.py
+- **Abre tu navegador y accede a:**
+- http://127.0.0.1:5000/
+## **uso de la aplicacion**
+***1.En la página principal, ingresa el nombre de una ciudad en el campo de texto. Mientras escribes, se mostrarán sugerencias de ciudades.***
+
+
+***2.Haz clic en "Obtener Clima" para ver la temperatura, descripción del clima y humedad de la ciudad seleccionada.***
+
 
 ## **Estructura del Proyecto**
 
@@ -31,18 +47,7 @@ proyecto-consulta-clima/
 └── static/               # Carpeta que contiene los archivos estáticos (CSS, JS)
     ├── styles.css        # Archivo CSS para los estilos
     └── script.js         # Archivo JavaScript para la lógica de la aplicación
-## **configuracion para el proyecto
-1.Clona el repositorio
-git clone https://github.com/tu-usuario/proyecto-consulta-clima.git
-cd proyecto-consulta-clima
-2.Instala las dependencias
-pip install flask requests
-3.Ejecuta el servidor flask
-python app.py
-4. abre el navegador y accede a
-http://127.0.0.1:5000/
-## **uso de la aplicacion**
-En la página principal, ingresa el nombre de una ciudad en el campo de texto. Mientras escribes, se mostrarán sugerencias de ciudades.
-Haz clic en "Obtener Clima" para ver la temperatura, descripción del clima y humedad de la ciudad seleccionada.
+
+
 
 
