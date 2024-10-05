@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta el Clima</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-icon">
+            <span class="cloud">☁️</span>
+            <span class="sun">☀️</span>
+            <span class="rain">🌧️</span>
+        </div>
+        <h1>Consulta el Clima</h1>
+        <div class="input-group">
+            <input type="text" id="city" placeholder="Ingrese la ciudad">
+            <ul id="suggestions" class="suggestions"></ul>
+        </div>
+        <button id="getWeather">Obtener Clima</button>
+        <div id="response"></div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
