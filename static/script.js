@@ -2,7 +2,9 @@ const cityInput = document.getElementById('city');
 const suggestionsList = document.getElementById('suggestions');
 const getWeatherButton = document.getElementById('getWeather');
 const responseDiv = document.getElementById('response');
+const animationBackground = document.getElementById('animation-background'); // Nuevo elemento para las animaciones
 
+// Evento para la barra de sugerencias
 cityInput.addEventListener('input', function() {
     const inputValue = this.value.toLowerCase();
     if (inputValue.length > 2) {
@@ -15,6 +17,7 @@ cityInput.addEventListener('input', function() {
     }
 });
 
+// Mostrar las sugerencias de ciudades
 function showSuggestions(cities) {
     suggestionsList.innerHTML = '';
     if (cities.length > 0) {
@@ -30,6 +33,7 @@ function showSuggestions(cities) {
     }
 }
 
+// Evento para obtener el clima
 getWeatherButton.addEventListener('click', function() {
     const city = cityInput.value;
     if (city) {
@@ -43,6 +47,8 @@ getWeatherButton.addEventListener('click', function() {
                     <p>Descripción: ${data.description}</p>
                     <p>Humedad: ${data.humidity}%</p>
                 `;
+                // Aquí se llama a la función de animación
+                updateBackgroundAnimation(data.temperature, data.description);
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -53,6 +59,45 @@ getWeatherButton.addEventListener('click', function() {
     }
 });
 
+// Añade la animación de fondo
+function updateBackgroundAnimation(temperature, description) {
+    animationBackground.innerHTML = ''; // Limpiar animaciones anteriores
+    animationBackground.className = '';
+    
+    // Añadir nubes
+    for (let i = 0; i < 3; i++) {
+        const cloud = document.createElement('div');
+        cloud.className = 'cloud';
+        cloud.style.top = `${Math.random() * 20}%`;
+        cloud.style.animationDelay = `${Math.random() * 15}s`;
+        animationBackground.appendChild(cloud);
+    }
+    
+    // Cambio de fondo según la temperatura
+    if (temperature < 10) {
+        animationBackground.classList.add('cold-bg');
+    } else if (temperature > 25) {
+        animationBackground.classList.add('warm-bg');
+        const sun = document.createElement('div');
+        sun.className = 'sun';
+        animationBackground.appendChild(sun);
+    } else {
+        animationBackground.classList.add('warm-bg');
+    }
+
+    // Animación de lluvia si la descripción incluye "rain" o "lluvia"
+    if (description.toLowerCase().includes('rain') || description.toLowerCase().includes('lluvia')) {
+        for (let i = 0; i < 100; i++) {
+            const raindrop = document.createElement('div');
+            raindrop.className = 'raindrop';
+            raindrop.style.left = `${Math.random() * 100}%`;
+            raindrop.style.animationDelay = `${Math.random() * 2}s`;
+            animationBackground.appendChild(raindrop);
+        }
+    }
+}
+
+// Mantén el resto del código existente para cerrar la lista de sugerencias
 document.addEventListener('click', function(e) {
     if (e.target !== cityInput && e.target !== suggestionsList) {
         suggestionsList.innerHTML = '';

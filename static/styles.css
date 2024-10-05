@@ -112,3 +112,84 @@ button:hover {
 .suggestions li:hover {
     background-color: #f0f0f0;
 }
+#animation-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Nubes */
+.cloud {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 200px;
+    animation: moveCloud 30s infinite linear;
+}
+
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: 10px;
+}
+
+.cloud::after {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    right: 30px;
+}
+
+@keyframes moveCloud {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* Lluvia */
+.raindrop {
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: #00f;
+    animation: fallRain 2s infinite linear;
+}
+
+@keyframes fallRain {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(calc(100vh + 20px)); }
+}
+
+/* Sol */
+.sun {
+    position: absolute;
+    top: 50px;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ffff00, #ff9900);
+    border-radius: 50%;
+    box-shadow: 0 0 50px #ffff00;
+}
+
+/* Fondos */
+.cold-bg {
+    background: linear-gradient(to bottom, #4a6fa5, #166b8b);
+}
+
+.warm-bg {
+    background: linear-gradient(to bottom, #87ceeb, #e4f1fe);
+}
