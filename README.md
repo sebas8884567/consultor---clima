@@ -21,7 +21,7 @@ Para ejecutar esta aplicación localmente, necesitas:
   - Requests
 ## **configuracion del proyecto**
 - **Clona el repositorio**
-- git clone https://github.com/tu-usuario/proyecto-consulta-clima.git
+- git clone https://github.com/sebas8884567/consultor---clima.git
 - cd proyecto-consulta-clima
 - **instala dependencias**
 - pip install flask requests
